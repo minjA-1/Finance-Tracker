@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finance Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('fin', this)">
+        <i class="ti ti-wallet"></i> Finansije
+      </button>
+    </div>
+
+    <!-- FINANSIJE -->
+    <div id="fin" class="section active">
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-label">Prihodi</div>
+          <div class="metric-value green" id="m-prihod">0 RSD</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Rashodi</div>
+          <div class="metric-value red" id="m-rashod">0 RSD</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Bilans</div>
+          <div class="metric-value" id="m-bilans">0 RSD</div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Opis</label>
+          <input id="f-opis" placeholder="npr. Plata, Stan..." />
+        </div>
+        <div class="form-group">
+          <label>Iznos (RSD)</label>
+          <input id="f-iznos" type="number" placeholder="5000" />
+        </div>
+        <div class="form-group">
+          <label>Tip</label>
+          <select id="f-tip">
+            <option value="prihod">Prihod</option>
+            <option value="rashod">Rashod</option>
+          </select>
+        </div>
+        <button class="btn btn-add" onclick="addFinancija()">
+          <i class="ti ti-plus"></i> Dodaj
+        </button>
+      </div>
+
+      <div class="list">
+        <div class="list-header fin-row">
+          <span>Opis</span>
+          <span>Iznos</span>
+          <span>Tip</span>
+          <span></span>
+        </div>
+        <div id="fin-list">
+          <div class="empty">Nema unosa — dodaj prvu stavku</div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
